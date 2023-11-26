@@ -41,7 +41,7 @@ function Comment(props) {
           </div>
         </div>
         <div className="text-end commentDate">
-          <span>{created}</span>
+          <span>{props.createdAt}</span>
         </div>
       </div>
       <div className="commentContent" style={{ margin: '5px' }}>

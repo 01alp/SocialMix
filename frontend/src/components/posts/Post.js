@@ -65,7 +65,8 @@ function Post(props) {
     // Handle invalid or missing date
     created = 'Date not available'; // Placeholder text or set a default date
   }
-
+  console.log('created:', created);
+  console.log('props.createdAt:', props.createdAt);
   let privacy;
   switch (props.privacy) {
     case 1:
@@ -110,7 +111,7 @@ function Post(props) {
             <div className="d-lg-flex align-items-lg-center">{privacy}</div>
           </div>
           <div>
-            <span>{created}</span>
+            <span>{props.createdAt}</span>
           </div>
         </div>
         {/* End: PostAuthor line */}
