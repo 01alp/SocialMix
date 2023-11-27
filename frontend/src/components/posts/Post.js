@@ -5,7 +5,7 @@ import CreateComment from './comments/CreateComment';
 import Avatar from '../modules/Avatar';
 
 function Post(props) {
-  console.log(props);
+  //console.log(props);
   const [showComments, setShowComments] = useState(false);
   const [postPrivacy, setPostPrivacy] = useState();
   const navigate = useNavigate();

@@ -62,7 +62,7 @@ function CreatePost(props) {
         }}
       >
         {/* Start: Create post form */}
-        <form style={{ padding: 5 }} o onSubmit={SubmitHandler}>
+        <form style={{ padding: 5 }} onSubmit={SubmitHandler}>
           {/* Start: createPostAuthorDiv */}
           <div className="d-flex justify-content-between createPostAuthorDiv" style={{ margin: 5 }}>
             <div className="d-flex align-items-lg-center UserDiv" id="userDiv-1">
