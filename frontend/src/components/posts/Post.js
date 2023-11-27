@@ -22,8 +22,9 @@ function Post(props) {
 
   const showCommentsHandler = useCallback(() => {
     console.log(showComments);
-    !showComments && setShowComments(true);
-    showComments && setShowComments(false);
+    // !showComments && setShowComments(true);
+    // showComments && setShowComments(false);
+    setShowComments((prevShowComments) => !prevShowComments);
   }, []);
 
   const createCommentHandler = (createCommentPayloadObj) => {
