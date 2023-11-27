@@ -5,6 +5,7 @@ import CreateComment from './comments/CreateComment';
 import Avatar from '../modules/Avatar';
 
 function Post(props) {
+  console.log(props);
   const [showComments, setShowComments] = useState(false);
   const [postPrivacy, setPostPrivacy] = useState();
   const navigate = useNavigate();
@@ -50,23 +51,22 @@ function Post(props) {
   }
 
   // Check if `props.createdAt` is a valid date
-  let created; // Declare the variable here
-  const isValidDate = props.createdAt && !isNaN(new Date(props.createdAt).getTime());
-  if (isValidDate) {
-    created = new Intl.DateTimeFormat('et-EE', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false, // Assuming 24-hour format is preferred
-    }).format(new Date(props.createdAt));
-  } else {
-    // Handle invalid or missing date
-    created = 'Date not available'; // Placeholder text or set a default date
+  let created;
+
+  // Custom function to parse and format the date
+  function formatDate(dateString) {
+    const parts = dateString.match(/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2})/);
+    if (parts) {
+      return `${parts[1]}-${parts[2]}-${parts[3]} ${parts[4]}:${parts[5]}`;
+    } else {
+      return 'Date not available';
+    }
   }
+
+  created = formatDate(props.createdat);
+
   console.log('created:', created);
-  console.log('props.createdAt:', props.createdAt);
+  console.log('props.createdAt:', props.createdat);
   let privacy;
   switch (props.privacy) {
     case 1:
@@ -111,7 +111,7 @@ function Post(props) {
             <div className="d-lg-flex align-items-lg-center">{privacy}</div>
           </div>
           <div>
-            <span>{props.createdAt}</span>
+            <span>{created}</span>
           </div>
         </div>
         {/* End: PostAuthor line */}
