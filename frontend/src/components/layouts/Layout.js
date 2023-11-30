@@ -81,7 +81,12 @@ function Layout(props) {
           <div id="content">
             <nav className="navbar navbar-expand bg-white shadow mb-4 topbar static-top navbar-light">
               <div className="container-fluid">
-                <button className="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button">
+                <button
+                  className="btn btn-link d-md-none rounded-circle me-3"
+                  id="sidebarToggleTop"
+                  type="button"
+                  onClick={() => setSidebarToggle()}
+                >
                   <i className="fas fa-bars" />
                 </button>
                 <form className="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -94,8 +99,7 @@ function Layout(props) {
                 </form>
                 <ul className="navbar-nav flex-nowrap ms-auto">
                   <li className="nav-item dropdown d-sm-none no-arrow">
-                    <Link>
-                      className="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" to="/"
+                    <Link className="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" to="/">
                       <i className="fas fa-search" />
                     </Link>
                     <div className="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
@@ -177,13 +181,13 @@ function Layout(props) {
                         <Avatar id={userId} src={avatar} showStatus={false} alt="" width={'52px'} />
                       </Link>
                       <div className="dropdown-menu shadow dropdown-menu-end animated--grow-in">
-                        <Link className="dropdown-item" to="#">
+                        <Link className="dropdown-item" to={`/profile/${userId}`}>
                           <i className="fas fa-user fa-sm fa-fw me-2 text-gray-400" />
                           &nbsp;Profile
                         </Link>
                         <Link className="dropdown-item" to="#">
                           <i className="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400" />
-                          &nbsp;Logout
+                          <span onClick={onClickingLogout}>Log out</span>
                         </Link>
                       </div>
                     </div>
