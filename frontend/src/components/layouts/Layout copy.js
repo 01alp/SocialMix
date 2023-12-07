@@ -5,7 +5,6 @@ import defaultAvatar from '../images/default_avatar.jpg';
 import { AuthContext } from '../store/auth-context';
 import { WebSocketContext } from '../store/websocket-context';
 import Avatar from '../modules/Avatar';
-import NotificationsCenter from '../notifications/NotificationsCenter';
 
 function Layout(props) {
   const authCtx = useContext(AuthContext);
@@ -116,7 +115,64 @@ function Layout(props) {
                       </form>
                     </div>
                   </li>
-                  <NotificationsCenter />
+                  <li className="nav-item dropdown no-arrow mx-1">
+                    <div className="nav-item dropdown no-arrow">
+                      <Link className="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" to="/">
+                        <span className="badge bg-danger badge-counter">3+</span>
+                        <i className="fas fa-bell fa-fw" />
+                      </Link>
+                      <div className="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
+                        <h6 className="dropdown-header">Notifications</h6>
+                        <div className="dropdown-item d-flex align-items-center">
+                          <div className="me-3">
+                            <div className="bg-primary icon-circle">
+                              <i className="fas fa-user-plus text-white" />
+                            </div>
+                          </div>
+                          <div>
+                            <span className="small text-gray-500">30.10.2023</span>
+                            <p>Fallow request. User 1 wants to follow you</p>
+                            <div>
+                              <button className="btn btn-primary btn-sm" type="button" style={{ marginRight: 10 }}>
+                                Accept
+                              </button>
+                              <button className="btn btn-primary btn-sm" type="button">
+                                Decline
+                              </button>
+                            </div>
+                          </div>
+                          {'{'}" "{'}'}
+                        </div>
+                        <div className="dropdown-item d-flex align-items-center">
+                          <div className="me-3">
+                            <div className="bg-success icon-circle">
+                              <i className="fas fa-comment-dots text-white" />
+                            </div>
+                          </div>
+                          <div>
+                            <span className="small text-gray-500">30.10.2023</span>
+                            <p>You have a new Message</p>
+                          </div>
+                          {'{'}" "{'}'}
+                        </div>
+                        <div className="dropdown-item d-flex align-items-center">
+                          <div className="me-3">
+                            <div className="bg-warning icon-circle">
+                              <i className="fas fa-exclamation-triangle text-white" />
+                            </div>
+                          </div>
+                          <div>
+                            <span className="small text-gray-500">30.10.2023</span>
+                            <p>New upcoming Event</p>
+                          </div>
+                          {'{'}" "{'}'}
+                        </div>
+                        <Link className="dropdown-item text-center small text-gray-500" to="#">
+                          Show All Alerts
+                        </Link>
+                      </div>
+                    </div>
+                  </li>
                   <div className="d-none d-sm-block topbar-divider" />
                   <li className="nav-item dropdown no-arrow">
                     <div className="nav-item dropdown no-arrow">
