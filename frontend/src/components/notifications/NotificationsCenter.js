@@ -69,9 +69,11 @@ const NotificationsCenter = (props) => {
           <span className={`badge ${showNotiBadge ? 'bg-danger' : 'badge-gray'} badge-counter`}> {showNotiBadge && '+1'}</span>
           <i className="fas fa-bell fa-fw" />
         </Link>
-        <div className="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
+        <div className="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in" onClick={props.onClose}>
           <h6 className="dropdown-header">Notifications</h6>
-          <div className="dropdown-item d-flex align-items-center">{newNoti && showNoti && <AllNotificationItems />}</div>
+          <div className="dropdown-item d-flex align-items-center">
+            {newNoti && showNoti && <AllNotificationItems onClick={props.onClose} />}
+          </div>
         </div>
       </div>
     </li>

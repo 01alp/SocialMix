@@ -209,9 +209,35 @@
                                             <!-- Start: profile followers container -->
                                             <div class="d-flex profileFollowers">
                                                 <!-- Start: profile followers -->
-                                                <div class="profileFollowers" style="margin-right: 10px;"><span class="followerCount" style="font-weight: bold;margin-right: 5px;">5</span><span>Followers</span></div><!-- End: profile followers -->
+                                                <div class="profileFollowers" style="margin-right: 10px;"><button class="btn btn-primary" type="button" data-bs-target="#modal-1" data-bs-toggle="modal"><span class="followerCount" style="font-weight: bold;margin-right: 5px;">5</span><span>Followers</span></button>
+                                                    <div class="modal" role="dialog" tabindex="-1" id="modal-1">
+                                                        <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Followers</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="d-flex align-items-lg-center"><img class="rounded-circle img-fluid" src="assets/img/avatars/avatar4.jpeg"><span style="margin-left: 10px;">User name</span></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- End: profile followers -->
                                                 <!-- Start: profiles following -->
-                                                <div class="profileFollowing"><span class="followerCount" style="font-weight: bold;margin-right: 5px;">3</span><span>Following</span></div><!-- End: profiles following -->
+                                                <div class="profileFollowing"><button class="btn btn-primary" type="button" data-bs-target="#modal-2" data-bs-toggle="modal"><span class="followerCount" style="font-weight: bold;margin-right: 5px;">5</span><span>Following</span></button>
+                                                    <div class="modal" role="dialog" tabindex="-1" id="modal-2">
+                                                        <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Followers</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="d-flex align-items-lg-center"><img class="rounded-circle img-fluid" src="assets/img/avatars/avatar4.jpeg"><span style="margin-left: 10px;">User name</span></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- End: profiles following -->
                                             </div><!-- End: profile followers container -->
                                         </div>
                                     </div><!-- End: followers following -->
@@ -275,7 +301,6 @@
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>
 
