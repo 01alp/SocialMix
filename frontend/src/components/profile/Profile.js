@@ -159,29 +159,20 @@ function Profile({ userId }) {
   }, [isChecked]);
 
   const setPublicityHandler = (e) => {
-    if (e.target.checked) {
-      setPublicity(false); // private
-    } else {
-      setPublicity(true);
-      // usersCtx.onPrivacyChange(currUserId, 1);
-    }
+    const isPublic = !e.target.checked; // Determine the publicity based on the checkbox
+    const publicityNum = isPublic ? 1 : 0; // Convert boolean to 1 (public) or 0 (private)
 
-    let publicityNum;
-    if (e.target.checked) {
-      publicityNum = 0;
-    } else {
-      publicityNum = 1;
-    }
-    console.log({ publicityNum });
-    localStorage.setItem('public', publicityNum);
+    setPublicity(isPublic); // Update the publicity state
+    setPubCheck(isPublic); // Update the pubCheck state for re-rendering
+    localStorage.setItem('public', publicityNum); // Update local storage
 
-    // post to store publicity to db
+    // Prepare the data to send in the request body
     const data = {
-      // Define the data to send in the request body
       targetid: parseInt(userId),
       public: publicityNum,
     };
 
+    // Post to store publicity to db
     fetch('http://localhost:8080/privacy', {
       method: 'POST',
       credentials: 'include',
@@ -193,6 +184,8 @@ function Profile({ userId }) {
     }).then(() => {
       console.log('privacy changed');
     });
+
+    // No need for separate if-else blocks
   };
 
   useEffect(() => {
