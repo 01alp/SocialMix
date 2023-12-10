@@ -20,7 +20,7 @@ const useGet = (url) => {
     };
     fetchData();
   }, [url]);
-
+  console.log('useGetData:', data);
   return { error, isLoaded, data };
 };
 
